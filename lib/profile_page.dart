@@ -64,7 +64,7 @@ class ProfilePage extends StatelessWidget {
                           children: const [
                             Icon(
                               Icons.email,
-                              color: Colors.blue,
+                              color: Colors.red,
                             ),
                             SizedBox(width: 10),
                             Text('info@gmail.com'),
