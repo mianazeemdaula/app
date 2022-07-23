@@ -58,13 +58,13 @@ class DesignOnePage extends StatelessWidget {
                       margin:
                           const EdgeInsets.only(right: 20, top: 15, bottom: 15),
                       decoration: BoxDecoration(
-                        color: i.isEven ? Colors.blue : Colors.orange,
+                        color: i.isEven ? Colors.blue : Colors.red,
                         borderRadius: BorderRadius.circular(12),
                         boxShadow: [
                           BoxShadow(
                             color: i.isEven
                                 ? Colors.blue.withOpacity(0.5)
-                                : Colors.orange.withOpacity(0.5),
+                                : Colors.red.withOpacity(0.5),
                             spreadRadius: 2,
                             blurRadius: 8,
                             offset: const Offset(0, 5),
@@ -82,7 +82,7 @@ class DesignOnePage extends StatelessWidget {
                               size: 60,
                               color: i.isEven
                                   ? Colors.blue.shade900
-                                  : Colors.orange.shade900,
+                                  : Colors.red.shade900,
                             ),
                             const SizedBox(height: 30),
                             const Text(
