@@ -3,6 +3,9 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'component/stat_card.dart';
+import 'component/task_tile.dart';
+
 class DesignOnePage extends StatelessWidget {
   const DesignOnePage({Key? key}) : super(key: key);
 
@@ -48,71 +51,60 @@ class DesignOnePage extends StatelessWidget {
             ),
             Container(
               height: size.height * 0.35,
-              padding: const EdgeInsets.only(left: 10),
+              padding: const EdgeInsets.only(left: 15),
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
                   for (int i = 1; i <= 10; i++)
-                    Container(
-                      width: size.width / 2.5,
-                      margin:
-                          const EdgeInsets.only(right: 20, top: 15, bottom: 15),
-                      decoration: BoxDecoration(
-                        color: i.isEven ? Colors.blue : Colors.red,
-                        borderRadius: BorderRadius.circular(12),
-                        boxShadow: [
-                          BoxShadow(
-                            color: i.isEven
-                                ? Colors.blue.withOpacity(0.5)
-                                : Colors.red.withOpacity(0.5),
-                            spreadRadius: 2,
-                            blurRadius: 8,
-                            offset: const Offset(0, 5),
-                          )
-                        ],
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Icon(
-                              FontAwesomeIcons.chartPie,
-                              size: 60,
-                              color: i.isEven
-                                  ? Colors.blue.shade900
-                                  : Colors.red.shade900,
-                            ),
-                            const SizedBox(height: 30),
-                            const Text(
-                              'Cryptocurreny',
-                              style: TextStyle(
-                                fontSize: 15,
-                                color: Colors.white,
-                              ),
-                            ),
-                            const SizedBox(height: 5),
-                            const Text(
-                              'Landing Page',
-                              style: TextStyle(
-                                fontSize: 15,
-                                color: Colors.white,
-                              ),
-                            ),
-                            const SizedBox(height: 15),
-                            const Text(
-                              '12 Tasks',
-                              style: TextStyle(color: Colors.white60),
-                            ),
-                            const SizedBox(height: 15),
-                          ],
-                        ),
-                      ),
+                    StatCard(
+                      size: size,
+                      i: i,
+                      icon: FontAwesomeIcons.airbnb,
+                      line1: 'Cryptocurreny',
+                      line2: 'Jamshaid Zindabad',
+                      line3: '12 Jobs',
                     )
                 ],
               ),
             ),
+            Expanded(
+              child: Container(
+                width: size.width,
+                padding: const EdgeInsets.all(20),
+                decoration: const BoxDecoration(
+                  color: Color(0xFFecf0f8),
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(20),
+                  ),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Text(
+                      'Personal Tasks',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    TaskTile(
+                      dotColor: Colors.red,
+                      icon: FontAwesomeIcons.video,
+                      title: 'NDA reveiw for website project',
+                      subTitle: 'Today - 10PM',
+                    ),
+                    SizedBox(height: 10),
+                    TaskTile(
+                      dotColor: Colors.blue,
+                      icon: FontAwesomeIcons.at,
+                      title: 'Email Reply for Green Project',
+                      subTitle: 'Tomorrow - 10PM',
+                    ),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),

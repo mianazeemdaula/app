@@ -17,6 +17,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'xyz',
       ),
+      themeMode: ThemeMode.dark,
       home: DesignOnePage(),
     );
   }
