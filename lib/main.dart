@@ -23,7 +23,7 @@ class App extends StatelessWidget {
         fontFamily: 'xyz',
       ),
       themeMode: ThemeMode.dark,
-      home: StreamPage(),
+      home: FuturePage(),
     );
   }
 }

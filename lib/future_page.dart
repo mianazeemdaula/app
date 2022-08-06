@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class FuturePage extends StatefulWidget {
   const FuturePage({Key? key}) : super(key: key);
@@ -29,6 +30,11 @@ class _FuturePageState extends State<FuturePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text('My Screen UI'),
+                  SvgPicture.asset(
+                    "assets/svg/abc.svg",
+                    width: 150,
+                    height: 150,
+                  ),
                 ],
               ),
             );
